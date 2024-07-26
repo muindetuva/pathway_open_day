@@ -47,8 +47,9 @@ if __name__ == '__main__':
     speak("Welcome to the ALX Open Day.")
     speak("Alexa Mwitu Here. How can I help you?")
     while True:
-        query = take_command().lower()
-        if query:
+        query = take_command()
+        if query is not None:
+            query = query.lower()
             if 'wikipedia' in query:
                 speak("Searching Wikipedia...")
                 query = query.replace("wikipedia", "").strip()
